@@ -24,7 +24,8 @@ section > div {
 }
 
 header, nav, section, footer {
-	background: #eee; text-align: center;
+	background: #eee; 
+	text-align: center;
 }
 
 nav span {
