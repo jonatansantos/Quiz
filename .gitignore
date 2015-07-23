@@ -1,5 +1,9 @@
 node_modules
+<<<<<<< HEAD
 .DS_Store
 npm-debug.log
 quiz.sqlite
 .env
+=======
+quiz.sqlite
+>>>>>>> origin/master
