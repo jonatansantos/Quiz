@@ -17,7 +17,7 @@ var Sequelize = require('sequelize');
 
 // Usar BBDD SQLite
 var sequelize = new Sequelize(DB_name, user, pwd,
-					{ dialect: protocol,
+					{ dialect: dialect,
 					  protocol: protocol,
 					  port: port,
 					  host: host,
@@ -33,7 +33,7 @@ exports.Quiz = Quiz; // Exportar definición de tabla Quiz
 // sequelize.sync() crea el manejador de una vez creada la tabla
 sequelize.sync().then(function() {
 	// success(..) ejecuta el manejador una vez creada la tabla
-	Quiz.count().then(function(){
+	Quiz.count().then(function(count){
 		if(count === 0) {
 			Quiz.create({ pregunta: 'Capital de Italia',
 						  respuesta: 'Roma'
