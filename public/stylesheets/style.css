@@ -14,8 +14,8 @@ body {
 
 #page-wrap > .main {
 	border: 1px solid #999;
-	padding 1%;
-	margin-bottom: : 1px;
+	padding: 1%;
+	margin-bottom: 1px;
 	color: black;
 }
 
@@ -28,11 +28,15 @@ header, nav, section, footer {
 	text-align: center;
 }
 
+table {
+	display: inline-block;
+	text-align: center;
+}
+
 nav span {
 	margin: 0px 10px 0px 0px;
 }
 
-
-/*a {
+a {
   color: #00B7FF;
-}*/
+}
