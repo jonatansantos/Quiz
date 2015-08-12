@@ -25,11 +25,19 @@ exports.create = function(req, res) {
 		}
 		req.session.user = {id:user.id, username:user.username};
 
-		res.redirect(req.session.redir);
+		req.session.tiempo = Date.now();
+		req.session.autoLogout = false;
+
+		res.redirect(req.session.redir.toString());
 	});
 };
 
 exports.destroy = function(req, res) {
 	delete req.session.user;
-	res.redirect(req.session.redir.toString());
+
+	if (req.session.autoLogout){
+		res.redirect("/login");
+	} else {
+		res.redirect(req.session.redir.toString());
+	}
 };

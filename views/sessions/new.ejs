@@ -1,5 +1,10 @@
 <h2>Login</h2>
 
+<% if (session.autoLogout==true && session.tiempo!="undefined") { %>
+	<label class="error">Usuario inactivo. </label>
+	<br/><label class="error">Vuelva a autenticarse</label>
+<% } %>
+
 <form method='POST' action='/login'>
 	<div class="filed">
 		<label for="login">Login:</label><br />

@@ -33,6 +33,19 @@ app.use(function(req, res, next) {
   }
 
   res.locals.session = req.session;
+
+  if(req.session.tiempo){
+    var now = Date.now();
+    var tiempoTranscurrido = now - req.session.tiempo;
+    if (tiempoTranscurrido > 120000) {
+      delete req.session.tiempo;
+      req.session.autoLogout = true;   
+      res.redirect("/logout");
+    } else {
+      req.session.tiempo = now;
+    }
+
+  }
   next();
 });
 
